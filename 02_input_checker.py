@@ -21,7 +21,7 @@ def user_choice():
             return "image"
 
         elif response == "i":
-            want_intiger = input("Press <enter> for an integer or any key for an image.")
+            want_integer = input("Press <enter> for an integer or any key for an image.")
             if want_integer == "":
                 return "integer"
             else:
