@@ -56,3 +56,4 @@ while keep_going == "":
 # main routine goes here
     statement_generator("This is a statement", "*")
     user_choice()
+    text_bits()
