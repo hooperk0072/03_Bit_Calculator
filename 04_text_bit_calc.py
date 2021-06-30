@@ -29,12 +29,12 @@ def img_bits():
 
     # multiplies width and height
     img_pix = img_width * img_height
-    # multiplies area by eight for bits
-    img_bits = img_pix * 8
+    # multiplies area by 24 for bits
+    img_bits = img_pix * 24
 
     print()
     print("Your image has an area of {} pixels.".format(img_pix))
-    print("# of bits is {} x 8...".format(img_pix))
+    print("# of bits is {} x 24...".format(img_pix))
     print("We need {} bits to represent your image".format(img_bits))
     print()
 

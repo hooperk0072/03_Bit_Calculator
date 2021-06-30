@@ -49,11 +49,53 @@ def user_choice():
             print("Please chose a valid file type!")
             print()
 
-# main routine
-keep_going = ""
-while keep_going == "":
+#checks input is a number more than a given value
+def num_check(question, low):
 
-# main routine goes here
+    valid = False
+    while not valid: 
+
+        error = 'Please enter a number that is more than or equal to {}'.format(low)
+
+        try:
+
+            # asks user to enter a number
+            response = int(input(question))
+
+            # checks if numer is more than zero
+            if response >= low:
+                return response
+
+            # outputs error if numer is invalid
+            else: 
+                print(error)
+                print()
+
+        except ValueError:
+            print(error)
+            print()
+
+# calculates bits
+
+# main routine
+
     statement_generator("This is a statement", "*")
     user_choice()
-    text_bits()
+
+keep_going = ""
+while keep_going == "":
+    #ask the user for file type
+    data_type = user_choice()
+    print("You chose ", data_type)
+
+    # for integers, ask for integer
+    if data_type =="integer":
+        var_integer = num_check("Enter an integer: ", 0)
+
+    # for images, as for width and height
+    # must be integers more than/equal to zero
+    elif data_type == "image":
+        print()
+        image_width = num_check("Image width? ", 1)
+        print()
+        image_height = num_check("Image height? ", 1)
