@@ -93,8 +93,8 @@ def img_bits():
     print()
 
     # aks user for image width and height
-    img_width = num_check('How many pixels wide is your image? ')
-    img_height = num_check('How many pixels tall is your imgae? ')
+    img_width = num_check('How many pixels wide is your image? ', 1)
+    img_height = num_check('How many pixels tall is your imgae? ', 1)
 
     # multiplies width and height for area/pixels
     img_pix = img_width * img_height
@@ -130,9 +130,25 @@ def int_bits():
 # calculates the # of bits for text (# of characters x 8)
 def text_bits():
 
+    print()
+    # ask user for a string...
+    var_text = input("Enter some text: ")
+
+    # calculate # of bits (length of string x 8)
+    var_length = len(var_text)
+    num_bits = 8 * var_length
+
+    # output answer with working
+    print()
+    print("\'{}\' has {} characters ...".format(var_text, var_length))
+    print("# of bits is {} x 8...".format(var_length))
+    print("We need {} bits to represent {}".format(num_bits, var_text))
+    print()
+
+    return ""
+
 # main routine
-statement_generator("Bit Calculator for Intigers, Text, and Images", "-")
-user_choice()
+statement_generator("Bit Calculator for Integers, Text, and Images", "-")
 
 keep_going = ""
 while keep_going == "":
